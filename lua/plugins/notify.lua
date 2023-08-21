@@ -5,9 +5,7 @@ return {
       {
         "<leader>un",
         function()
-          require("notify").dismiss({ silent = true, pending = true }).setup({
-            background_colour = "#000000",
-          })
+          require("notify").dismiss({ silent = true, pending = true })
         end,
         desc = "Dismiss all Notifications",
       },
@@ -26,9 +24,7 @@ return {
       local Util = require("lazyvim.util")
       if not Util.has("noice.nvim") then
         Util.on_very_lazy(function()
-          vim.notify = require("notify").setup({
-            background_colour = "#000000",
-          })
+          vim.notify = require("notify")
         end)
       end
     end,
